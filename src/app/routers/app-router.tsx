@@ -1,6 +1,7 @@
 import Layout from "@/app/layout";
 import AdminPage from "@/pages/admin";
 import AuthPage from "@/pages/auth";
+import ContactInfo from "@/pages/contact-info";
 import CreateEntry from "@/pages/create-entry";
 import DraftPage from "@/pages/draft";
 import HeroPage from "@/pages/hero";
@@ -37,6 +38,7 @@ const AppRouter = () => {
                             children: [{ index: true, element: <AdminPage /> }],
                         },
                         { path: routes.createEntry, element: <CreateEntry /> },
+                        { path: routes.contactInfo, element: <ContactInfo /> },
                     ],
                 },
                 { path: routes.heroById, element: <HeroPage /> },

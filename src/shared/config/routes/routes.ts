@@ -6,6 +6,7 @@ const routes = {
     lk: "lk",
     createDraft: "create_draft",
     createEntry: "create_entry",
+    contactInfo: "contact_info",
     admin: "admin",
     successPay: "pay/success",
     useragreement: "useragreement",

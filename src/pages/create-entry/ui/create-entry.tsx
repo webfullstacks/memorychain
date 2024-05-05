@@ -11,19 +11,23 @@ const CreateEntry = () => {
                 <h1 className="text-4xl font-bold mb-10 max-w-72 lg:max-w-full">Создание записи героя</h1>
 
                 <div className="mb-10">
-                    <h2 className="text-lg lg:text-2xl mb-[18px] lg: mb-6 opacity-70 font-bold">Основная информация</h2>
+                    <h2 className="text-2xl mb-[18px] lg:mb-6 opacity-70 font-bold">Основная информация</h2>
 
                     <Input placeholder="Имя героя" />
+
                     <div className="lg:flex justify-between items-center gap-5">
                         <Input placeholder="Дата рождения (ДД.ММ.ГГ)" />
                         <Input placeholder="Дата смерти (ДД.ММ.ГГ)" />
                     </div>
+
                     <Input placeholder="Страна рождения героя" />
+
                     <Input placeholder="Звание героя" />
+
                     <textarea
                         className="w-full h-56 mb-[18px] lg:mb-7 border rounded-[14px] bg-[#442E46] bg-opacity-10 border-[#452E47] border-opacity-25 p-[22px] resize-none"
                         placeholder="Описание и информация о истории героя"
-                    ></textarea>
+                    />
 
                     <div className="flex justify-between items-center gap-7">
                         <div className="w-36 h-36 bg-[#442E46] opacity-[0.02] rounded-[14px]" />
@@ -44,7 +48,7 @@ const CreateEntry = () => {
                 </div>
 
                 <div>
-                    <h2 className="text-lg lg:text-2xl mb-6 opacity-70 font-bold">Документы и награды</h2>
+                    <h2 className="text-2xl mb-6 opacity-70 font-bold">Документы и награды</h2>
 
                     <div className="mb-10">
                         <h3 className="text-sm font-bold mb-1">Документ героя</h3>
