@@ -16,7 +16,7 @@ const Poster = () => {
                     передавайте свой ключ <br className="lg:hidden" /> потомкам
                 </p>
                 <div>
-                    <Link to={routes.heroes}>
+                    <Link to={routes.lk}>
                         <Button className="mx-auto mt-10 lg:mt-16">Узнать своих героев</Button>
                     </Link>
                 </div>
