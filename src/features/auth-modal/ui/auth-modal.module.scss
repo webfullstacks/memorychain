@@ -1,0 +1,172 @@
+@import "@/assets/styles/variables.scss";
+
+.authModalOverlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100dvw;
+    height: 100dvh;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    background: rgba(23, 23, 23, 0.44);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+
+    z-index: 100;
+}
+
+.authModal {
+    display: flex;
+    background: white;
+    width: 200%;
+    overflow: hidden;
+    max-width: 1400px;
+
+    @media screen and (max-width: $lg) {
+        flex-direction: column;
+        height: 200%;
+        max-height: 100dvh;
+    }
+}
+
+.left {
+    display: flex;
+    flex: 1;
+    max-width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 0px;
+    position: relative;
+
+    @media screen and (max-width: $lg) {
+        height: 100%;
+    }
+}
+
+.backButton {
+    display: none;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    align-items: center;
+
+    cursor: pointer;
+
+    font-family: "El Messiri";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 25px;
+
+    color: rgba(0, 0, 0, 0.7);
+
+    svg {
+        margin-right: 10px;
+    }
+
+    @media screen and (max-width: $lg) {
+        display: flex;
+    }
+}
+
+.createAccountTitle {
+    font-family: "El Messiri";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 75px;
+    /* identical to box height */
+    text-align: center;
+    letter-spacing: 0.08em;
+    color: #000000;
+}
+
+.createAccountLink {
+    font-family: "El Messiri";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 31px;
+    text-align: center;
+
+    color: #000000;
+
+    margin-bottom: 60px;
+}
+
+.createAccountLinkInAccount {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.yandexAuthButtonBody {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.yandexAuthButtonContainer {
+    margin-top: 32px;
+}
+
+.yandexAuthButtonBody svg {
+    margin-right: 6px;
+}
+
+.right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    max-width: 100%;
+    position: relative;
+    background-color: $primary;
+    background-image: url(src/assets/images/space-desktop.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @media screen and (max-width: $lg) {
+        background-color: white;
+        background-image: url(src/assets/images/tree.png);
+        background-size: cover;
+        background-position-y: top;
+    }
+}
+
+.rightImage {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    max-width: 100%;
+    max-height: 100%;
+
+    @media screen and (max-width: $lg) {
+        display: none;
+    }
+}
+
+.closeModalButton {
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    transition: 0.3s;
+    :hover {
+        opacity: 0.8;
+    }
+
+    @media screen and (max-width: $lg) {
+        display: none;
+    }
+}

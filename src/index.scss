@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&display=swap");
+@import url("./assets/styles/fonts.css");
+@import url("./assets/styles/splide.css");
+@import url("./assets/styles/particles.css");
+
+@import url("./assets/styles/fancybox.css");
+@import url("./assets/styles/style.min.css");
+@import url("./assets/styles/swiper-bundle.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.text-gradient {
+    color: transparent;
+    background-clip: text;
+    background-image: linear-gradient(180deg, #ffffff -241.3%, rgba(255, 255, 255, 0) 410.77%);
+}
+
+@media (min-width: 1024px) {
+    .lg\:text-border {
+        -webkit-text-fill-color: black;
+        -webkit-text-stroke-color: black;
+        -webkit-text-stroke-width: 1px;
+    }
+
+    .lg\:text-border-white {
+        -webkit-text-fill-color: white;
+        -webkit-text-stroke-color: white;
+        -webkit-text-stroke-width: 4px;
+    }
+}
+
+.background-gradient-violet {
+    background-image: linear-gradient(226.62deg, #452e47 20.38%, #665067 98.94%);
+}
+
+.text-shadow-white {
+    text-shadow: white 1px 0 10px;
+}
+
+.animate-spin {
+    animation: spin 80s linear infinite;
+}
+
+.thing-card:hover h4 {
+    text-shadow: white 1px 0 10px;
+}
+
+.btn-primary-normal {
+    transition: all 0.4s linear !important;
+    background-color: #ad8d81 !important;
+}
+
+.btn-primary-normal:hover {
+    background: radial-gradient(53.45% 53.45% at 50% 50%, #ebd6cf 0%, #ad8d81 100%);
+}
+
+.btn-primary-normal:active {
+    background: radial-gradient(53.45% 53.45% at 50% 50%, #d3b9af 0%, #866868 100%);
+}

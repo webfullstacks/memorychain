@@ -1,0 +1,66 @@
+@import "@/assets/styles/variables.scss";
+
+.yandexAuthButton {
+    align-items: center;
+    border-radius: 0.25rem;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-flex;
+    font-family:
+        system-ui,
+        -apple-system,
+        system-ui,
+        "Helvetica Neue",
+        Helvetica,
+        Arial,
+        sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    justify-content: center;
+    line-height: 1.25;
+    margin: 0;
+    min-height: 3rem;
+    padding: calc(0.875rem - 1px) calc(1.5rem - 1px);
+    position: relative;
+    text-decoration: none;
+    transition: all 250ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    width: auto;
+
+    padding: 12px 120px;
+    gap: 6px;
+    isolation: isolate;
+
+    background-color: #ffffff;
+    color: rgba(252, 63, 29, 1);
+    border: 1px solid #fc3f1d;
+    border-radius: 500px;
+
+    @media screen and (max-width: $lg) {
+        padding: 12px 60px;
+    }
+}
+
+.yandexAuthButton:hover,
+.yandexAuthButton:focus {
+    outline: none;
+}
+
+.yandexAuthButton:hover {
+    background: rgba(243, 239, 236, 0.36);
+    border: 1px solid #fc3f1d;
+}
+
+.yandexAuthButton:active {
+    background-color: #f0f0f1;
+}
+
+.yandexAuthButton:disabled,
+.yandexAuthButton:disabled:hover {
+    cursor: auto;
+    opacity: 0.3;
+    background: #ffffff;
+}
