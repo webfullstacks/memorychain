@@ -11,7 +11,7 @@ const MedalsModal = ({ setShowMedalsModal }: { setShowMedalsModal: (showMedalsMo
                         <h3 className="text-2xl font-bold mb-[18px] lg:mb-6">Список орденов и медалей</h3>
 
                         <button
-                            className="absolute top-6 right-6 lg: top-10 lg: right-10"
+                            className="absolute top-6 right-6 lg:top-10 lg:right-10"
                             type="button"
                             onClick={() => setShowMedalsModal(false)}
                         >
