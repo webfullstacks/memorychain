@@ -1,8 +1,13 @@
 import Breadcrumbs from "@/shared/ui/breadcrumbs";
 import Button from "@/shared/ui/button";
 import Input from "@/shared/ui/input";
+import { useState } from "react";
+
+import MedalsModal from "./modals/medals-modal";
 
 const CreateEntry = () => {
+    const [showMedalsModal, setShowMedalsModal] = useState<boolean>(false);
+
     return (
         <div className="container">
             <Breadcrumbs page="Создание записи" />
@@ -72,10 +77,12 @@ const CreateEntry = () => {
                             размер 1200х1600px, минимальный 400х600px. Вес изображения не более 10мб
                         </p>
 
-                        <button className="flex items-center">
+                        <button className="flex items-center" onClick={() => setShowMedalsModal(!showMedalsModal)}>
                             <span className="text-sm underline opacity-70">Добавить медали и ордена</span>
                             <img src="/icons/arrow-right-black.svg" alt="arrow right" />
                         </button>
+
+                        {showMedalsModal && <MedalsModal setShowMedalsModal={setShowMedalsModal} />}
                     </div>
 
                     <div className="mb-10">
