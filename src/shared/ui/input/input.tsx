@@ -7,8 +7,6 @@ export const Input = ({
     noMargin?: boolean;
     className?: string;
 }) => {
-    console.log(className);
-
     return (
         <input
             className={

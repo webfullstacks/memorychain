@@ -4,7 +4,7 @@ import Input from "@/shared/ui/input";
 const MedalsModal = ({ setShowMedalsModal }: { setShowMedalsModal: (showMedalsModal: boolean) => void }) => {
     return (
         <>
-            <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none ">
+            <div className="justify-center items-start lg:items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none ">
                 <div className="relative w-auto mx-auto max-w-3xl ">
                     {/*content*/}
                     <div className="border-0 shadow-lg relative flex flex-col bg-[#F4F4F4] outline-none focus:outline-none py-[60px] px-6 lg:px-[87px] lg:rounded-[14px] lg:min-w-[810px] w-svw h-svh lg:w-auto lg:h-auto">

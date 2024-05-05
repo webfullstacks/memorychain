@@ -3,10 +3,14 @@ import Button from "@/shared/ui/button";
 import Input from "@/shared/ui/input";
 import { useState } from "react";
 
+import DocumentsModal from "./modals/documents-modal";
 import MedalsModal from "./modals/medals-modal";
+import PaymentModal from "./modals/payment-modal";
 
 const CreateEntry = () => {
     const [showMedalsModal, setShowMedalsModal] = useState<boolean>(false);
+    const [showPaymentModal, setShowPaymentModal] = useState<boolean>(false);
+    const [showDocumentsModal, setShowDocumentsModal] = useState<boolean>(false);
 
     return (
         <div className="container">
@@ -63,10 +67,12 @@ const CreateEntry = () => {
                             размер 1200х1600px, минимальный 400х600px. Вес изображения не более 10мб
                         </p>
 
-                        <button className="flex items-center">
+                        <button className="flex items-center" onClick={() => setShowDocumentsModal(true)}>
                             <span className="text-sm underline opacity-70">Добавить документ героя</span>
                             <img src="/icons/arrow-right-black.svg" alt="arrow right" />
                         </button>
+
+                        {showDocumentsModal && <DocumentsModal setShowDocumentsModal={setShowDocumentsModal} />}
                     </div>
 
                     <div className="mb-10">
@@ -77,7 +83,7 @@ const CreateEntry = () => {
                             размер 1200х1600px, минимальный 400х600px. Вес изображения не более 10мб
                         </p>
 
-                        <button className="flex items-center" onClick={() => setShowMedalsModal(!showMedalsModal)}>
+                        <button className="flex items-center" onClick={() => setShowMedalsModal(true)}>
                             <span className="text-sm underline opacity-70">Добавить медали и ордена</span>
                             <img src="/icons/arrow-right-black.svg" alt="arrow right" />
                         </button>
@@ -102,7 +108,11 @@ const CreateEntry = () => {
                 </div>
 
                 <div className="mb-24 lg:mb-32">
-                    <Button size="small">Перейти к оплате</Button>
+                    <Button size="small" onClick={() => setShowPaymentModal(true)}>
+                        Перейти к оплате
+                    </Button>
+
+                    {showPaymentModal && <PaymentModal setShowPaymentModal={setShowPaymentModal} />}
                 </div>
             </div>
         </div>
