@@ -104,7 +104,7 @@ const LkPage = () => {
                             <div className="mb-5 flex justify-between items-center">
                                 <div>Приватность</div>
                                 <label className="inline-flex items-center cursor-pointer">
-                                    <input type="checkbox" className="sr-only peer" checked={true} />
+                                    <input type="checkbox" className="sr-only peer" />
                                     <div className="relative w-[35px] h-[20px] bg-[#452E4724] peer-focus:outline-none rounded-full peer peer-checked:after:bg-[#452E47] peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-[#AD8D81] after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-[#452E4724]"></div>
                                 </label>
                             </div>
