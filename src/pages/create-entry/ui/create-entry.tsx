@@ -181,15 +181,22 @@ const CreateEntry = () => {
                     <div className="mb-10">
                         <h3 className="text-sm font-bold mb-5">Приватность карточки героя</h3>
 
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-2 relative">
                             <input
-                                id="checkbox"
-                                className="w-6 h-6 rounded-full border border-[#452E47] border-opacity-25 bg-[#442E46] bg-opacity-[0.02]"
+                                id="make-public"
+                                className="cursor-pointer peer w-6 h-6 relative appearance-none border border-[#452E4740] bg-[#442E4605] rounded-full focus:outline-none checked:bg-black checked:bg-opacity-70"
                                 type="checkbox"
                             />
-                            <label className="text-sm opacity-70" htmlFor="checkbox">
+
+                            <label className="text-sm opacity-70" htmlFor="make-public">
                                 Сделать карточку публичной
                             </label>
+
+                            <img
+                                className="absolute t-1/2 left-1 pointer-events-none opacity-0 peer-checked:opacity-100"
+                                src="/icons/check.svg"
+                                alt="check"
+                            />
                         </div>
                     </div>
                 </div>
