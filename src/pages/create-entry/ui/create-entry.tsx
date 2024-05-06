@@ -1,7 +1,7 @@
 import Breadcrumbs from "@/shared/ui/breadcrumbs";
 import Button from "@/shared/ui/button";
 import Input from "@/shared/ui/input";
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 
 import DocumentsModal from "./modals/documents-modal";
 import MedalsModal from "./modals/medals-modal";
@@ -11,6 +11,15 @@ const CreateEntry = () => {
     const [showMedalsModal, setShowMedalsModal] = useState<boolean>(false);
     const [showPaymentModal, setShowPaymentModal] = useState<boolean>(false);
     const [showDocumentsModal, setShowDocumentsModal] = useState<boolean>(false);
+    const [heroImage, setHeroImage] = useState<string | undefined>();
+
+    const handleChange = (event: ChangeEvent): void => {
+        const element = event.target as HTMLInputElement;
+
+        if (!element.files) return;
+
+        setHeroImage(URL.createObjectURL(element.files[0]));
+    };
 
     return (
         <div className="container">
@@ -39,7 +48,32 @@ const CreateEntry = () => {
                     />
 
                     <div className="flex justify-between items-center gap-7">
-                        <div className="w-36 h-36 bg-[#442E46] opacity-[0.02] rounded-[14px]" />
+                        <div className="w-36 h-36 relative">
+                            {heroImage ? (
+                                <>
+                                    <img
+                                        className="w-full h-full object-cover rounded-[14px]"
+                                        src={heroImage}
+                                        alt="hero image"
+                                    />
+
+                                    <div className="w-full h-full absolute top-0 left-0 bg-[#452E4799] rounded-[14px]">
+                                        <button
+                                            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-sm text-white"
+                                            type="button"
+                                            onClick={() => setHeroImage(undefined)}
+                                        >
+                                            Удалить
+                                        </button>
+                                    </div>
+                                </>
+                            ) : (
+                                <div className="bg-[#442E46] bg-opacity-[0.02] w-full h-full rounded-[14px] flex justify-center items-center border border-dashed border-[#452E4740]">
+                                    <img src="/icons/user-scan-light.svg" alt="user" />
+                                </div>
+                            )}
+                        </div>
+
                         <div>
                             <h3 className="text-sm font-bold mb-1">Фотография героя</h3>
 
@@ -49,8 +83,26 @@ const CreateEntry = () => {
                             </p>
 
                             <button className="flex items-center gap-1.5">
-                                <span className="text-sm underline opacity-70">Прикрепить фотографию</span>
-                                <img src="/icons/paperclip.svg" alt="arrow right" />
+                                <input
+                                    id="upload-photo"
+                                    className="absolute -z-10 opacity-0"
+                                    type="file"
+                                    onChange={handleChange}
+                                />
+
+                                <label
+                                    className="text-sm underline opacity-70 flex gap-1.5 cursor-pointer"
+                                    htmlFor="upload-photo"
+                                >
+                                    {heroImage ? (
+                                        <span>Заменить фотографию</span>
+                                    ) : (
+                                        <>
+                                            <span>Прикрепить фотографию</span>
+                                            <img src="/icons/paperclip.svg" alt="arrow right" />
+                                        </>
+                                    )}
+                                </label>
                             </button>
                         </div>
                     </div>

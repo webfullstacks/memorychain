@@ -46,11 +46,11 @@ const PaymentModal = ({ setShowPaymentModal }: { setShowPaymentModal: (showPayme
 
                                 <div className="flex items-center gap-2">
                                     <input
-                                        id="checkbox"
+                                        id="terms"
                                         className="w-6 h-6 rounded-full border border-[#452E47] border-opacity-25 bg-[#442E46] bg-opacity-[0.02]"
                                         type="checkbox"
                                     />
-                                    <label className="text-sm opacity-70" htmlFor="checkbox">
+                                    <label className="text-sm opacity-70" htmlFor="terms">
                                         Принимаю условия
                                     </label>
                                 </div>
