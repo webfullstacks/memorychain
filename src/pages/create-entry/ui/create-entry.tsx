@@ -16,9 +16,44 @@ const CreateEntry = () => {
     const handleChange = (event: ChangeEvent): void => {
         const element = event.target as HTMLInputElement;
 
-        if (!element.files) return;
+        if (!element.files || !element.files[0]) return;
 
-        setHeroImage(URL.createObjectURL(element.files[0]));
+        const file = element.files[0];
+
+        // Проверка максимального и минимального разрешения
+        const MAX_WIDTH = 1200;
+        const MAX_HEIGHT = 1600;
+        const MIN_WIDTH = 400;
+        const MIN_HEIGHT = 600;
+
+        const image = new Image();
+        image.src = URL.createObjectURL(file);
+
+        image.onload = () => {
+            const width = image.width;
+            const height = image.height;
+
+            if (width > MAX_WIDTH || height > MAX_HEIGHT) {
+                alert("Максимальное разрешение 1200x1600px");
+                return;
+            }
+
+            if (width < MIN_WIDTH || height < MIN_HEIGHT) {
+                alert("Минимальное разрешение 400x600px");
+                return;
+            }
+
+            // Проверка максимального размера файла
+            const MAX_SIZE_MB = 10;
+            const fileSizeMB = file.size / (1024 * 1024); // переводим размер в мегабайты
+
+            if (fileSizeMB > MAX_SIZE_MB) {
+                alert("Максимальный размер файла 10MB");
+                return;
+            }
+
+            setHeroImage(URL.createObjectURL(file));
+        };
     };
 
     return (
